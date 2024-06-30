@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sqlite3
-import enum
+from enum import Enum
 
 
 class PasswordManager:
@@ -31,9 +31,33 @@ class User:
     def signout():
         pass
     
+class Menu(Enum):
+    FIRSTITEM = "1: Login"
+    SECONDITEM = "2: Create an account"
+    THIRDITEM = "3: Generate a password"
+
 
 def main():
-    pass
+    print('''
+     ***********************************
+     *                                 *
+     *  . . . Password Manager . . .   *
+     *                                 *
+     ***********************************
+    ''')
+
+    for menu in (Menu):
+       print(menu.value)
+
+    print("\n")
+    userInput = int(input('Enter your choice: '))  
+    if userInput == 1:
+       pass
+    elif userInput == 2:
+       pass 
+    elif userInput == 3:
+       pass 
+
 
 
 if __name__ == '__main__':
