@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 import sqlite3
 from enum import Enum
+import random
 
 
 class PasswordManager:
     def generate_password():
-        pass
+        password_characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890_-='
+        return ''.join(random.choice(password_characters) for _ in range(10))
+        
     
     def save_account_credentials():
         pass
@@ -56,7 +59,11 @@ def main():
     elif userInput == 2:
        pass 
     elif userInput == 3:
-       pass 
+       print("\n")
+       print(f'Here is your password: {PasswordManager.generate_password()}')
+       print("\n")
+       
+
 
 
 
